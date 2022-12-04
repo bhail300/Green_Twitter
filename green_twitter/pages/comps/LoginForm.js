@@ -1,5 +1,5 @@
 import React from 'react';
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {  onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
 import { useState }  from 'react';
 import { auth } from '../../firebase/firebase.config';
 import { useRouter } from 'next/router';
@@ -32,28 +32,33 @@ box-shadow: 0 0 5pt 0.5pt #D3D3D3;
 
 export default function Login() {
 
+  const router = useRouter()
+
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const login = async () => {
+  const [user, setUser] = useState({});
+
+  React.useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => setUser(currentUser))
+  }, [])
+
+  const login = async (e) => {
     try {
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       console.log(user);
+      router.push('/home');
     } catch(error) {
       console.log(error.message);
     }
   }
 
-  const handleSubmit = event => {
-    console.log("handle submit rand")
-    event.target.reset();
-  }
 
   return (
-      <FormCont action="/Homepage" onSubmit={handleSubmit}>
+      <FormCont >
         <h2>Login</h2>
-            <FormInput placeholder="Email..." onChange={(event) => {setLoginEmail(event.target.value)}}/>
-            <FormInput placeholder="Password..." onChange={(event) => {setLoginPassword(event.target.value)}}/>
+            <FormInput required placeholder="Enter email..." onChange={(event) => {setLoginEmail(event.target.value)}}/>
+            <FormInput required placeholder="Enter password..." onChange={(event) => {setLoginPassword(event.target.value)}}/>
           <SubmitButton onClick={login} type="button" >Login</SubmitButton>
       </FormCont>
   )

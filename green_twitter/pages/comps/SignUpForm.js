@@ -31,6 +31,8 @@ box-shadow: 0 0 5pt 0.5pt #D3D3D3;
 `
 
 export default function Signup() {
+
+  const router = useRouter()
   
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
@@ -41,6 +43,7 @@ export default function Signup() {
       setRegisterPassword("");
       const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
       console.log(user);
+      router.push('/home');
     } catch(error) {
       console.log(error.message)
     }
@@ -55,8 +58,8 @@ export default function Signup() {
   return (
     <FormCont action="/Homepage" onSubmit={handleSubmit}>
       <h2>Register</h2>
-          <FormInput placeholder="Enter email..." onChange={(event) => {setRegisterEmail(event.target.value)}}/>
-          <FormInput placeholder="Enter password..." onChange={(event) => {setRegisterPassword(event.target.value)}}/>
+          <FormInput required placeholder="Enter email..." onChange={(event) => {setRegisterEmail(event.target.value)}}/>
+          <FormInput required placeholder="Enter password..." onChange={(event) => {setRegisterPassword(event.target.value)}}/>
         <SubmitButton onClick={register} type="submit"className="">Submit</SubmitButton>
     </FormCont>
   )
