@@ -3,6 +3,8 @@ import { addDoc, collection } from "@firebase/firestore";
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import { auth, db } from "../firebase/firebase.config";
+import { Center, Container } from "./styles";
+
 
 
 
@@ -29,8 +31,9 @@ export default function CreatePost() {
 
 
     return (
+        <Container>
+            <Center>
         <div classname="createPostPage">
-
             <div className="cpConatiner">
                 <h1>Create a post</h1>
                 <div className="inputGp">
@@ -41,8 +44,12 @@ export default function CreatePost() {
                     <label> Post: </label>
                     <textarea placeholder="Post..."onChange={(event) => {setPostText(event.target.value)}}/>
                 </div>
-                <button onClick={createPost}>Post</button>
+                <div className="postButton">
+                <button className="postBtn" onClick={createPost}>Post</button>
+                </div>
             </div>
         </div>
+        </Center>
+        </Container>
     )
 }

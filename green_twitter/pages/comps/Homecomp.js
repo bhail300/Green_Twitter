@@ -6,11 +6,11 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 const SubmitButton = styled.button`
-width: 10%;
+width: 100%;
 padding: 1%;
-font-size:15px;
+font-size: 15px;
 border:1px solid #363630;
-border-radius: 10px;
+border-radius: 20px;
 margin: 5%;
 border: none;
 box-shadow: 0 0 5pt 0.5pt #D3D3D3;
@@ -38,7 +38,7 @@ export default function Homecomp() {
       <div className="">
 
         <div className="">
-          <h2>User Logged in:</h2>
+          <h2>Welcome User!</h2>
           <div className="">
             {user?.email}
           </div>
