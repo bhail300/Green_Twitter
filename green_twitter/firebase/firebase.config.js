@@ -1,14 +1,25 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
+import { getFirestore} from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDF8qHFzY1eecYGJ30maob0fF6yABbhtBc",
-  authDomain: "green-aecb9.firebaseapp.com",
-  projectId: "green-aecb9",
-  storageBucket: "green-aecb9.appspot.com",
-  messagingSenderId: "120896384878",
-  appId: "1:120896384878:web:13f7fadb8a557e7bfbdb7f"
+
+  apiKey: "AIzaSyBzi0qzVORqYrNrwVwjsrJ-9MaBZO76dI8",
+
+  authDomain: "assesment-login-auth.firebaseapp.com",
+
+  projectId: "assesment-login-auth",
+
+  storageBucket: "assesment-login-auth.appspot.com",
+
+  messagingSenderId: "1083557940236",
+
+  appId: "1:1083557940236:web:8e1b8439e56b2520227229"
+
 };
+
+
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
