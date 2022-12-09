@@ -56,7 +56,7 @@ export default function Login() {
 
   return (
       <FormCont >
-        <h2 >Login</h2>
+        <h2>Login</h2>
             <FormInput required placeholder="Enter email..." onChange={(event) => {setLoginEmail(event.target.value)}}/>
             <FormInput required placeholder="Enter password..." onChange={(event) => {setLoginPassword(event.target.value)}}/>
           <SubmitButton onClick={login} type="button" >Login</SubmitButton>

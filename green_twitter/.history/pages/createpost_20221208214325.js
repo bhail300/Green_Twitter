@@ -20,7 +20,6 @@ export default function CreatePost() {
     const postsCollectionRef = collection(db, "posts");
    
 
-
     const createPost = async () => {
         await addDoc(postsCollectionRef, {
           title,
@@ -29,8 +28,6 @@ export default function CreatePost() {
         });
         router.push('/home');
     };
-
-    
 
 
     return (

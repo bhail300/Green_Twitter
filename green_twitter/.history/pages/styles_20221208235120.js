@@ -24,3 +24,7 @@ export const Center = styled.div`
 position: absolute;
 top: 28px;
 `
+
+export const title = styled.title`
+color:black;
+`

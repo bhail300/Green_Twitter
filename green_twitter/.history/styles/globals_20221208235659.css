@@ -133,12 +133,9 @@ textarea {
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
-  color:black;
+  color:#363630;
 }
 
- h1,h2,p,label {
-  color: black;
-}
 
 
 

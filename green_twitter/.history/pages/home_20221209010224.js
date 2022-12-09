@@ -6,7 +6,7 @@ import { db } from '../firebase/firebase.config';
 import { AuthErrorCodes } from '@firebase/auth';
 import { useRouter } from 'next/router';
 import ImageExampleImage from './comps/images';
-
+import RoundButton from './comps/roundButton';
 
 
 

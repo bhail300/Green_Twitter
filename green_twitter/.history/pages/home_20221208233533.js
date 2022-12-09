@@ -6,10 +6,7 @@ import { db } from '../firebase/firebase.config';
 import { AuthErrorCodes } from '@firebase/auth';
 import { useRouter } from 'next/router';
 import ImageExampleImage from './comps/images';
-
-
-
-
+import CircularButton from './comps/circularButton';
 
 
 
@@ -35,7 +32,7 @@ export default function HomePage() {
 
   }
   
-  
+
 
   return (
 
@@ -74,9 +71,10 @@ export default function HomePage() {
       </div>
       
     </div>
-
+    
     </Center>
-     
+     <CircularButton 
+      icon="plus"/>
         </Container>
 
     

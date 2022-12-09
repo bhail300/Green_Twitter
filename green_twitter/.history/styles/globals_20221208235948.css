@@ -53,6 +53,10 @@ a {
   text-align: center;
 
 }
+.cpContainer h2 {
+  color: black;
+
+}
 
 .cpContainer label {
   font-size: 25px;
@@ -136,9 +140,6 @@ textarea {
   color:black;
 }
 
- h1,h2,p,label {
-  color: black;
-}
 
 
 
