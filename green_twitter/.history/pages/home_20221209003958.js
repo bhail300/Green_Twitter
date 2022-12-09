@@ -6,9 +6,7 @@ import { db } from '../firebase/firebase.config';
 import { AuthErrorCodes } from '@firebase/auth';
 import { useRouter } from 'next/router';
 import ImageExampleImage from './comps/images';
-
-
-
+import {RoundButton} from '../pages/comps/roundbutton';
 
 
 
@@ -74,9 +72,9 @@ export default function HomePage() {
       </div>
       
     </div>
-
+    
     </Center>
-     
+      <RoundButton></RoundButton>
         </Container>
 
     

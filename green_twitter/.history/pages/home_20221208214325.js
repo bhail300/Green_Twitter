@@ -8,11 +8,6 @@ import { useRouter } from 'next/router';
 import ImageExampleImage from './comps/images';
 
 
-
-
-
-
-
 export default function HomePage() {
 
   const router = useRouter()
@@ -35,7 +30,7 @@ export default function HomePage() {
 
   }
   
-  
+
 
   return (
 
@@ -74,9 +69,8 @@ export default function HomePage() {
       </div>
       
     </div>
-
+    
     </Center>
-     
         </Container>
 
     
