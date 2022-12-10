@@ -40,7 +40,7 @@ export default function Homecomp() {
       <div className="">
         <div className="">
           <h2>Welcome User!</h2>
-          <div className="" style={{color:'black'}} >
+          <div className="">
             {user?.email}
           </div>
           <SubmitButton onClick={logout} type="button" className="">Log Out</SubmitButton>

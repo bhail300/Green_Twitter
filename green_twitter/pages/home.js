@@ -6,6 +6,7 @@ import { db } from '../firebase/firebase.config';
 import { AuthErrorCodes } from '@firebase/auth';
 import { useRouter } from 'next/router';
 import ImageExampleImage from './comps/images';
+import BasicButton from './comps/Button';
 
 
 
@@ -43,12 +44,12 @@ export default function HomePage() {
     <Center>
    
     <div className="homePage">
-      {postLists.map((post) => {
+      {postLists.map((post,index) => {
 
         
         return (
           
-          <div className="post">
+          <div className="post" kye={index}>
             <div className="postHeader">
               <div className="title">
                 <h1> {post.title}</h1>
@@ -65,8 +66,11 @@ export default function HomePage() {
 
       <div>
 
-      <button onClick={makePost}>Create a post </button>
-
+      {/* <button onClick={makePost}>Create a post </button> */}
+      <div onClick={makePost}>
+        <BasicButton  BasicButton></BasicButton>
+      </div>
+      
       </div>
 
       <div>
@@ -76,7 +80,7 @@ export default function HomePage() {
     </div>
 
     </Center>
-     
+    
         </Container>
 
     
