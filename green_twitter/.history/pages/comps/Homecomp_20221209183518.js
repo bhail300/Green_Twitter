@@ -4,7 +4,7 @@ import { useState }  from 'react';
 import { auth } from '../../firebase/firebase.config';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import BasicButton from './Button';
+
 
 const SubmitButton = styled.button`
 width: 100%;
@@ -40,7 +40,7 @@ export default function Homecomp() {
       <div className="">
         <div className="">
           <h2>Welcome User!</h2>
-          <div className="" style={{color:'black'}} >
+          <div className="">
             {user?.email}
           </div>
           <SubmitButton onClick={logout} type="button" className="">Log Out</SubmitButton>
